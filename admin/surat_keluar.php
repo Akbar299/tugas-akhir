@@ -9,7 +9,7 @@ include "../include/session.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Surat Masuk</title>
+  <title>Surat Keluar</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -42,12 +42,12 @@ include "../include/session.php";
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Surat Masuk</h1>
+            <h1 class="m-0 text-dark">Surat Keluar</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Surat Masuk</li>
+              <li class="breadcrumb-item active">Surat Keluar</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -61,28 +61,24 @@ include "../include/session.php";
         
 
           <!-- fix for small devices only -->
+         <button type="button" class="btn btn-primary">Tambah Surat</button>
 
-          <!-- <form method="post" action="namafile.html">
-		<button type="submit">Link 1</button>
-  </form> -->
-        <form method="POST" action="form_surat_masuk.php">
-        <button type="submit" class="btn btn-primary">Tambah Surat</button>
-        </form>
-         
+        
 
               <!-- Main content -->
         <section class="content">
           <div class="row">
-            <div class="col-xl-12">
+            <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
+
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <br>
-                  <table class="table table-bordered table-striped table-scalable">
-                    <?php
-                      include "list_surat_masuk.php";
-                    ?>
+                  <br></br>
+          <table id="data" class="table table-bordered table-striped table-scalable">
+            <?php
+              include "detail_surat_keluar.php";
+            ?>
                   </table>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
