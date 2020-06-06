@@ -22,6 +22,7 @@ if($cek > 0){
  
 	// cek jika user login sebagai admin
 	if($data['role']=="admin"){
+		$_SESSION["login"] = true;
  
 		// buat session login dan username
 		$_SESSION['username'] = $username;
@@ -31,9 +32,11 @@ if($cek > 0){
  
 	// cek jika user login sebagai pegawai
 	}else if($data['role']=="pegawai"){
+		$_SESSION["login"] = true;
 		// buat session login dan username
 		$_SESSION['username'] = $username;
 		$_SESSION['role'] = "pegawai";
+		$_SESSION['ruangan'] = $data['ruangan'];
 		// alihkan ke halaman dashboard pegawai
 		header("location:pegawai/home.php");
  
@@ -41,10 +44,10 @@ if($cek > 0){
 	}else{
  
 		// alihkan ke halaman login kembali
-		header("location:login.php?pesan=gagal");
+		header("Location:index.php?pesan=gagal");
 	}	
 }else{
-	header("location:login.php?pesan=gagal");
+	header("Location: index.php?pesan=gagal");
 }
  
 ?>

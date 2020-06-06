@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Jun 2020 pada 10.46
+-- Waktu pembuatan: 06 Jun 2020 pada 17.41
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
 
@@ -59,7 +59,7 @@ CREATE TABLE `tbl_suratmasuk` (
   `tanggal_surat` date NOT NULL,
   `perihal` varchar(200) NOT NULL,
   `keterangan` varchar(200) NOT NULL,
-  `ditujukan` enum('admin','pegawai','bdg_plip','bdg_pkp','bdg_tik','bdg_tkpbe','bdg_ps','subbdg_uk','subbdg_k','subbdg_pp','kepala','sekretaris') NOT NULL,
+  `ditujukan` enum('Kepala Dinas','Sekretaris','Bidang Pengelolaan dan Layanan Informasi Publik','Bidang Pengelolaan Komunikasi Publik','Bidang Teknologi Informasi dan Komunikasi','Bidang Tata Kelola Pemerintahan Berbasis Elektronik','Bidang Persandian dan Statistik','Sub Bagian Umum dan Kepegawaian','Sub Bagian Keuangan','Sub Bagian Perencanaan dan Pelaporan') NOT NULL,
   `file_suratmasuk` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -68,8 +68,8 @@ CREATE TABLE `tbl_suratmasuk` (
 --
 
 INSERT INTO `tbl_suratmasuk` (`id_surat`, `nomor_surat`, `asal_surat`, `tanggal_terima`, `tanggal_surat`, `perihal`, `keterangan`, `ditujukan`, `file_suratmasuk`) VALUES
-(8, '1235', 'afgs', '2020-05-06', '2020-06-05', 'gfhs', 'jfjjf', 'bdg_plip', '1319701060_B. Lampung.docx.pdf'),
-(9, '143', 'asfsfa', '2020-06-06', '2020-06-05', 'adfasf', '355', 'kepala', '2042957487_B. Lampung.docx.pdf');
+(8, '1235', 'afgs', '2020-05-06', '2020-06-05', 'gfhs', 'jfjjf', 'Bidang Pengelolaan dan Layanan Informasi Publik', '1319701060_B. Lampung.docx.pdf'),
+(10, '102031', 'afgs', '2020-05-06', '2020-06-05', 'gfhs', 'jfjjf', 'Bidang Teknologi Informasi dan Komunikasi', '1319701060_B. Lampung.docx.pdf');
 
 -- --------------------------------------------------------
 
@@ -84,7 +84,7 @@ CREATE TABLE `tbl_user` (
   `nik` int(16) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `role` enum('admin','pegawai','bdg_plip','bdg_pkp','bdg_tik','bdg_tkpbe','bdg_ps','subbdg_uk','subbdg_k','subbdg_pp') NOT NULL,
-  `ruangan` enum('bdg_plip','bdg_pkp','bdg_tik','bdg_tkpbe','bdg_ps','subbdg_uk','subbdg_k','subbdg_pp') NOT NULL
+  `ruangan` enum('Kepala Dinas','Sekretaris','Bidang Pengelolaan dan Layanan Informasi Publik','Bidang Pengelolaan Komunikasi Publik','Bidang Teknologi Informasi dan Komunikasi','Bidang Tata Kelola Pemerintahan Berbasis Elektronik','Bidang Persandian dan Statistik','Sub Bagian Umum dan Kepegawaian','Sub Bagian Keuangan','Sub Bagian Perencanaan dan Pelaporan') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -92,9 +92,9 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `username`, `password`, `nik`, `nama`, `role`, `ruangan`) VALUES
-(1, 'admin', 'admin', 1111111111, 'Akbar Rinaldy', 'admin', 'subbdg_uk'),
-(2, 'plip', 'plip', 12345678, 'plip', 'pegawai', 'bdg_plip'),
-(3, 'tik', 'tik', 1334, 'tik', 'pegawai', 'bdg_tik');
+(1, 'admin', 'admin', 1111111111, 'Akbar Rinaldy', 'admin', ''),
+(2, 'plip', 'plip', 12345678, 'plip', 'pegawai', 'Bidang Pengelolaan dan Layanan Informasi Publik'),
+(3, 'tik', 'tik', 1334, 'tik', 'pegawai', 'Bidang Teknologi Informasi dan Komunikasi');
 
 --
 -- Indexes for dumped tables
@@ -132,7 +132,7 @@ ALTER TABLE `tbl_suratkeluar`
 -- AUTO_INCREMENT untuk tabel `tbl_suratmasuk`
 --
 ALTER TABLE `tbl_suratmasuk`
-  MODIFY `id_surat` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_surat` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_user`

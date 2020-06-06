@@ -22,15 +22,7 @@ include "../include/session.php";
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
-<?php 
-	session_start();
- 
-	// cek apakah yang mengakses halaman ini sudah login
-	if($_SESSION['role']==""){
-		header("location:login.php?pesan=gagal");
-	}
- 
-	?>
+
 <?php include "../template/navbar.php" ?>
 <?php include "../template/side-bar.php" ?>
 <?php include "../template/footer.php" ?>

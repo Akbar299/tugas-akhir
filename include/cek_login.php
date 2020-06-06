@@ -1,6 +1,11 @@
 <?php 
 // mengaktifkan session pada php
 session_start();
+if(isset($_SESSION["login"])){
+	header("Location: index.php");
+	exit;
+}
+
  
 // menghubungkan php dengan koneksi database
 include '../include/connect.php';

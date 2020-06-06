@@ -1,10 +1,14 @@
 <?php
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-@session_start();
-if(empty($_SESSION['role'])){
+session_start();
+// if(!isset($_SESSION["login"])){
+//    header("Location : index.php");
+//    exit;
+// }
+if(empty($_SESSION['login'])){
          echo '<script language="javascript">
                      window.alert("ERROR! Anda Harus Login Terlebih Dahulu");
-                     window.location.href="../login.php";
+                     window.location.href="../index.php";
                    </script>';
          die();
      } else {
