@@ -1,2 +1,5 @@
+TES GIT PULL
+
+
 'admin','pegawai','bdg_plip','bdg_pkp','bdg_tik','bdg_tkpbe','bdg_ps','subbdg_uk','subbdg_k','subbdg_pp'
 'Kepala Dinas','Sekretaris','Bidang Pengelolaan dan Layanan Informasi Publik','Bidang Pengelolaan Komunikasi Publik','Bidang Teknologi Informasi dan Komunikasi','Bidang Tata Kelola Pemerintahan Berbasis Elektronik','Bidang Persandian dan Statistik','Sub Bagian Umum dan Kepegawaian','Sub Bagian Keuangan','Sub Bagian Perencanaan dan Pelaporan'
