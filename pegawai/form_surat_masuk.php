@@ -105,9 +105,16 @@ include "../include/session.php";
         <div class="form-group">
         <label>Ditujukkan : </label>
           <select class="form-control" name="ditujukan">
-            <option value="kepala">Kepala Dinas</option>
+            <option value="Kepala Dinas">Kepala Dinas</option>
             <option value="Sekretaris">Sekretaris</option>
-            <option value="bdg_plip">Bidang Pengelolaan dan Layanan Informasi Publik</option>
+            <option value="Bidang Pengelolaan dan Layanan Informasi Publik">Bidang Pengelolaan dan Layanan Informasi Publik</option>
+            <option value="Bidang Pengelolaan Komunikasi Publik">Bidang Pengelolaan Komunikasi Publik</option>
+            <option value="Bidang Teknologi Informasi dan Komunikasi">Bidang Teknologi Informasi dan Komunikasi</option>
+            <option value="Bidang Tata Kelola Pemerintahan Berbasis Elektronik">Bidang Tata Kelola Pemerintahan Berbasis Elektronik</option>
+            <option value="Bidang Persandian dan Statistik">Bidang Persandian dan Statistik</option>
+            <option value="Sub Bagian Umum dan Kepegawaian">Sub Bagian Umum dan Kepegawaian</option>
+            <option value="Sub Bagian Keuangan">Sub Bagian Keuangan</option>
+            <option value="Sub Bagian Perencanaan dan Pelaporan">Sub Bagian Perencanaan dan Pelaporan</option>
           </select>
         </div>
             

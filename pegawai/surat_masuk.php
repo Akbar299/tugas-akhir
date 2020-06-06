@@ -31,9 +31,9 @@ include "../include/session.php";
       header("location:surat_masuk.php?pesan=gagal");
     }
     ?>
-<?php include "../template/navbar.php" ?>
-<?php include "../template/side-bar.php" ?>
-<?php include "../template/footer.php" ?>
+<?php include "../template/navbar_pegawai.php" ?>
+<?php include "../template/side-bar_pegawai.php" ?>
+<?php include "../template/footer_pegawai.php" ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -65,9 +65,9 @@ include "../include/session.php";
           <!-- <form method="post" action="namafile.html">
 		<button type="submit">Link 1</button>
   </form> -->
-      <form method="POST" action="form_surat_masuk.php">
+<!--       <form method="POST" action="form_surat_masuk.php">
         <button type="submit" class="btn btn-primary">Tambah Surat</button>
-      </form>
+      </form> -->
          
 
               <!-- Main content -->
