@@ -6,9 +6,8 @@
         <th>Tanggal Terima</th>
         <th>Tanggal Surat</th>
         <th>Perihal</th>
-        <th>Keterangan</th>
         <th>Ditujukan</th>
-		<th>File Surat</th>
+        <th>Aksi</th>
 	</tr>
 </thead>
 	<tbody>
@@ -29,9 +28,8 @@
 									<td>$suratmasuk[tanggal_terima]</td>
 									<td>$suratmasuk[tanggal_surat]</td>
 									<td>$suratmasuk[perihal]</td>
-									<td>$suratmasuk[keterangan]</td>
 									<td>$suratmasuk[ditujukan]</td>
-									<td>$suratmasuk[file_suratmasuk]</td>
+									<td>$suratmasuk</td>
 								</tr>";
 						}
 					?>

@@ -96,6 +96,14 @@ include "../include/session.php";
 				<label>Perihal</label>
 				<textarea class="form-control" name="perihal" required="required"></textarea>
       </div>
+
+              <div class="form-group">
+          <label>Status :</label>
+            <select class="form-control" name="status">
+              <option value="Diambil">Diambil</option>
+              <option value="Diantar">Diantar</option>
+            </select>
+        </div>
             
       <div class="form-group">
 				<label>Keterangan</label>

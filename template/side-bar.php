@@ -24,6 +24,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
           <li class="nav-item has-treeview menu-open">
             <a href="home.php" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -33,7 +34,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="users.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -41,14 +42,13 @@
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>
-          </li>
+          </li> -->
 
           <li class="nav-item">
-            <a href="surat_masuk.php" class="nav-link">
+            <a href="form_surat_masuk.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Surat Masuk
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
@@ -57,13 +57,12 @@
             <a href="surat_keluar.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>Surat Keluar
-              <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="laporan_surat_masuk.php" class="nav-link">
+            <a href="surat_masuk.php" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>Laporan Surat Masuk</p>
             </a>
@@ -80,7 +79,6 @@
             <a href="../logout.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>Logout
-              <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>

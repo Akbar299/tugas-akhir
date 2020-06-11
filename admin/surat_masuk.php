@@ -12,9 +12,9 @@ include "../include/session.php";
   <title>Surat Masuk</title>
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="../overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../assets/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
@@ -97,19 +97,43 @@ include "../include/session.php";
   </div>
   <!-- /.content-wrapper -->
 
+  <!-- Modal Popup untuk delete--> 
+    <div class="modal fade" id="modal_delete">
+      <div class="modal-dialog">
+        <div class="modal-content" style="margin-top:100px;">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" style="text-align:center;">Are you sure to delete this information ?</h4>
+          </div>    
+          <div class="modal-footer" style="margin:0px; border-top:0px; text-align:center;">
+            <a href="#" class="btn btn-danger" id="delete_link">Delete</a>
+            <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Javascript Delete -->
+  <script>
+    function confirm_delete(delete_url){
+      $("#modal_delete").modal('show', {backdrop: 'static'});
+      document.getElementById('delete_link').setAttribute('href', delete_url);
+    }
+  </script>
+
 
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="../assets/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="../assets/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
+<script src="../assets/js/adminlte.js"></script>
 
 <!-- OPTIONAL SCRIPTS -->
 <script src="dist/js/demo.js"></script>
@@ -125,5 +149,7 @@ include "../include/session.php";
 
 <!-- PAGE SCRIPTS -->
 <script src="dist/js/pages/dashboard2.js"></script>
+
+
 </body>
 </html>

@@ -13,6 +13,7 @@ $tanggal_surat 	    	= date('Y-m-d',strtotime($_POST["tanggal_surat"]));
 $perihal	 	    	= $_POST["perihal"];
 $keterangan	 	    	= $_POST["keterangan"];
 $ditujukkan	 	    	= $_POST["ditujukan"];
+$status					= $_POST["status"];
  
 $rand = rand();
 $ekstensi =  array('jpeg', 'jpg', 'png', 'pdf'); //filter ekstensi file yang diperbolehkan

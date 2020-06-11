@@ -35,7 +35,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="users.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -43,7 +43,7 @@
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>
-          </li>
+          </li> -->
 
           <li class="nav-item">
             <a href="surat_masuk.php" class="nav-link">
@@ -52,18 +52,17 @@
             </a>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="laporan_surat_keluar.php" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>Laporan Surat Keluar</p>
             </a>
-          </li>
+          </li> -->
 
           <li class="nav-item">
             <a href="../logout.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>Logout
-              <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
