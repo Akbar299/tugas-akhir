@@ -71,7 +71,7 @@ include "../include/session.php";
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <br>
-                  <form action="add_surat_masuk.php" method="post" enctype="multipart/form-data">
+      <form action="add_surat_masuk.php" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label>Nomor Surat:</label>
 				<input type="text" class="form-control" placeholder="Masukkan Nomor Surat" name="nomor_surat" required="required">
@@ -133,10 +133,10 @@ include "../include/session.php";
 
         <div class="form-group">
 				<label>Foto :</label>
-				<input type="file" name="foto" required="required">
-				<p style="color: red">Ekstensi yang diperbolehkan .png | .jpg | .jpeg | .gif</p>
+				<input type="file" name="file" required="required">
+				<p style="color: red">Ekstensi yang diperbolehkan .pdf</p>
 			</div>			
-			<input type="submit" name="" value="Simpan" class="btn btn-primary">
+			<button type="submit" name="upload" value="Upload" class="btn btn-primary">Simpan</button>
         </form>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->

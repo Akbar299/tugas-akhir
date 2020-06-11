@@ -12,11 +12,11 @@ include "../include/session.php";
   <title>AdminLTE 3 | Dashboard 2</title>
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="./overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="../assets/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="./assets/css/adminlte.min.css">
+  <link rel="stylesheet" href="../assets/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -37,10 +37,10 @@ include "../include/session.php";
 <!-- overlayScrollbars -->
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
+<script src="../assets/js/adminlte.js"></script>
 
 <!-- OPTIONAL SCRIPTS -->
-<script src="dist/js/demo.js"></script>
+<script src="../assets/js/demo.js"></script>
 
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->

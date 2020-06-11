@@ -136,7 +136,8 @@ include "../include/session.php";
                   <tr> 
                   <td>No Telpon</td>
                   <td width='1%'>:</td>
-                  <td><a href='view_surat.php?id_surat=$surat_masuk[file_suratmasuk];?>'>Lihat File</a></td>
+                  
+                  <td><a href='view_surat.php?id_surat=$surat_masuk[id_surat]' target_blank>Lihat File</a></td>
                  </tr>
                 </thead>
                 ";}?>
