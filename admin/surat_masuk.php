@@ -58,19 +58,11 @@ include "../include/session.php";
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        
-
-          <!-- fix for small devices only -->
-
-          <!-- <form method="post" action="namafile.html">
-		<button type="submit">Link 1</button>
-  </form> -->
       <form method="POST" action="form_surat_masuk.php">
         <button type="submit" class="btn btn-primary">Tambah Surat</button>
-      </form>
-         
-
-              <!-- Main content -->
+        </form>
+      
+      <!-- Main content -->
         <section class="content">
           <div class="row">
             <div class="col-xl-12">
@@ -86,10 +78,25 @@ include "../include/session.php";
                   </table>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </section><!-- /.content -->
+              <!-- Modal Popup untuk delete--> 
+            </div>
+          </div>
+          </section><!-- /.content -->
         </div>
+        <div class="modal fade" id="modal_delete">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="margin-top:100px;">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" style="text-align:center;">Are you sure to delete this information ?</h4>
+                    </div>    
+                    <div class="modal-footer" style="margin:0px; border-top:0px; text-align:center;">
+                      <a href="#" class="btn btn-danger" id="delete_link">Delete</a>
+                      <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
         <!-- /.row -->
       </div><!--/. container-fluid -->
     </section>
@@ -97,58 +104,33 @@ include "../include/session.php";
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Modal Popup untuk delete--> 
-    <div class="modal fade" id="modal_delete">
-      <div class="modal-dialog">
-        <div class="modal-content" style="margin-top:100px;">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" style="text-align:center;">Are you sure to delete this information ?</h4>
-          </div>    
-          <div class="modal-footer" style="margin:0px; border-top:0px; text-align:center;">
-            <a href="#" class="btn btn-danger" id="delete_link">Delete</a>
-            <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
-      <!-- Javascript Delete -->
-  <script>
-    function confirm_delete(delete_url){
-      $("#modal_delete").modal('show', {backdrop: 'static'});
-      document.getElementById('delete_link').setAttribute('href', delete_url);
-    }
-  </script>
+
+	<!-- Javascript Delete -->
+	<script>
+		function confirm_delete(delete_url){
+			$("#modal_delete").modal('show', {backdrop: 'static'});
+			document.getElementById('delete_link').setAttribute('href', delete_url);
+		}
+	</script>
 
 
 </div>
 <!-- ./wrapper -->
-
-<!-- REQUIRED SCRIPTS -->
+  <!-- JS -->
+  <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script src="../assets/jquery/jquery.min.js"></script>
+<script src="../assets/js/jquery.js"></script>
 <!-- Bootstrap -->
-<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
 <!-- overlayScrollbars -->
-<script src="../assets/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
 <!-- AdminLTE App -->
 <script src="../assets/js/adminlte.js"></script>
+<script src="../assets/js/custom.js"></script>
 
 <!-- OPTIONAL SCRIPTS -->
-<script src="dist/js/demo.js"></script>
-
-<!-- PAGE PLUGINS -->
-<!-- jQuery Mapael -->
-<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-<script src="plugins/raphael/raphael.min.js"></script>
-<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
-<!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
-
-<!-- PAGE SCRIPTS -->
-<script src="dist/js/pages/dashboard2.js"></script>
+<script src="../assets/js/demo.js"></script>
 
 
 </body>
