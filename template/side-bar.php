@@ -54,7 +54,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="surat_keluar.php" class="nav-link">
+            <a href="form_surat_keluar.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>Surat Keluar
               </p>
@@ -69,7 +69,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="laporan_surat_keluar.php" class="nav-link">
+            <a href="surat_keluar.php" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>Laporan Surat Keluar</p>
             </a>

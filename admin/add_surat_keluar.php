@@ -14,8 +14,8 @@ $ditujukkan	 	    	= $_POST["ditujukan"];
  
 $rand = rand();
 $ekstensi =  array('jpeg', 'jpg', 'png', 'pdf'); //filter ekstensi file yang diperbolehkan
-$filename = $_FILES['foto']['name'];
-$ukuran = $_FILES['foto']['size'];
+$filename = $_FILES['file']['name'];
+$ukuran = $_FILES['file']['size'];
 $ext = pathinfo($filename, PATHINFO_EXTENSION);
  
 if(!in_array($ext,$ekstensi) ) {
@@ -23,7 +23,7 @@ if(!in_array($ext,$ekstensi) ) {
 }else{
 	if($ukuran < 1044070){		
 		$file_suratkeluar = $rand.'_'.$filename;
-		move_uploaded_file($_FILES['foto']['tmp_name'], 'file_suratkeluar/'.$rand.'_'.$filename);
+		move_uploaded_file($_FILES['file']['tmp_name'], 'file_suratkeluar/'.$rand.'_'.$filename);
 		mysqli_query($connect, "INSERT INTO tbl_suratkeluar VALUES(NULL, $nomor_surat, '$tanggal_surat_dibuat', 
         '$tujuan_surat', '$perihal', '$keterangan', '$file_suratkeluar')");
 		header("location:surat_keluar.php?alert=berhasil");

@@ -71,39 +71,49 @@ include "../include/session.php";
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <br>
-                  <form action="add_surat_keluar.php" method="post" enctype="multipart/form-data">
-			<div class="form-group">
-				<label>Nomor Surat:</label>
-				<input type="text" class="form-control" placeholder="Masukkan Nomor Surat" name="nomor_surat" required="required">
-			</div>
-
-      <div class="form-group">
-				<label>Tanggal Surat Dibuat :</label>
-        <input id="datepickerdibuat" class="form-control" placeholder="Masukkan Tanggal Surat Dibuat" name="tanggal_surat_dibuat" required="required" />
-      </div>
-
-      <div class="form-group">
-        <label>Tujuan Surat :</label>
-        <input type="text" class="form-control" placeholder="Masukkan Tujuan Surat" name="tujuan_surat" required="required">
-      </div>
- 
-			<div class="form-group">
-				<label>Perihal</label>
-				<textarea class="form-control" name="perihal" required="required"></textarea>
-      </div>
-            
-      <div class="form-group">
-				<label>Keterangan</label>
-				<input type="text" class="form-control" placeholder="Masukkan Keterangan" name="keterangan" required="required">
-      </div>
-            
-      <div class="form-group">
-				<label>Foto :</label>
-				<input type="file" name="file" required="required">
-				<p style="color: red">Ekstensi yang diperbolehkan .png | .jpg | .jpeg | .gif</p>
-			</div>			
-			<input type="submit" name="" value="Simpan" class="btn btn-primary">
-        </form>
+                              <?php
+            $id_surat = $_GET["id_surat"];
+            $querysuratkeluar = mysqli_query($connect, "SELECT * FROM tbl_suratkeluar WHERE id_surat='$id_surat'");
+            if($querysuratkeluar == false) {
+              die("Terjadi Kesalahan : ".mysqli_error($connect));
+            }
+            while ($surat_keluar = mysqli_fetch_array($querysuratkeluar)){
+              echo "
+              <div class='content'>
+              <table class='table-form' border='0' width='100%' cellpadding='0' cellspacing='0'>
+              <thead>
+                  <tr>
+                  <td width='20%'>Nomor Surat</td>
+                  <td>: </td>
+                  <td>$surat_keluar[nomor_surat]</td>
+                  </tr>
+                  <tr>
+                  <td>Tanggal Surat Dibuat</td>
+                  <td width='1%'>:</td>
+                  <td>$surat_keluar[tanggal_surat_dibuat]</td>
+                  </tr>
+                  <tr> 
+                  <td>Tujuan Surat</td>
+                  <td width='1%'>:</td>
+                  <td>$surat_keluar[tujuan_surat]</td>
+                  </tr>
+                  <tr>
+                  <td>Perihal</td>
+                  <td width='1%'>:</td>
+                  <td>$surat_keluar[perihal]</td>
+                  </tr>
+                  <tr>
+                  <td>Keterangan</td>
+                  <td width='1%'>:</td>
+                  <td>$surat_keluar[keterangan]</td>
+                  </tr>
+                  <tr> 
+                  <td>No Telpon</td>
+                  <td width='1%'>:</td>
+                  <td><a href='view_surat_keluar.php?id_surat=$surat_keluar[id_surat]' target_blank>Lihat File</a></td>
+                  </tr>
+                </thead>
+                ";}?>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
             </div><!-- /.col -->
@@ -122,9 +132,14 @@ include "../include/session.php";
 </div>
 <!-- ./wrapper -->
 <script>
-        $('#datepickerdibuat').datepicker({
+        $('#datepickerterima').datepicker({
             uiLibrary: 'bootstrap4'
-        });     
+        });
+
+        $('#datepickersurat').datepicker({
+            uiLibrary: 'bootstrap4'
+        });
+        
 </script>
 
 <script>
