@@ -25,7 +25,7 @@ include "../include/session.php";
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-<div class="wrapper">
+  <div class="wrapper">
 
     <?php
     session_start();
@@ -35,8 +35,8 @@ include "../include/session.php";
       header("location:surat_masuk.php?pesan=gagal");
     }
     ?>
-<?php include "../template/navbar.php" ?>
-<?php include "../template/side-bar.php" ?>
+  <?php include "../template/navbar.php" ?>
+  <?php include "../template/side-bar.php" ?>
 
 
   <!-- Content Wrapper. Contains page content -->
@@ -70,87 +70,87 @@ include "../include/session.php";
                 <div class="box-header">
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <br>
-      <form action="add_surat_masuk.php" method="post" enctype="multipart/form-data">
-			<div class="form-group">
-				<label>Nomor Surat:</label>
-				<input type="text" class="form-control" placeholder="Masukkan Nomor Surat" name="nomor_surat" required="required">
-			</div>
+                <br>
+                <form action="add_surat_masuk.php" method="post" enctype="multipart/form-data">
+          			<div class="form-group">
+          				<label>Nomor Surat:</label>
+          				<input type="text" class="form-control" placeholder="Masukkan Nomor Surat" name="nomor_surat" required="required">
+          			</div>
 
-			<div class="form-group">
-				<label>Asal Surat :</label>
-				<input type="text" class="form-control" placeholder="Masukkan Nomor Surat" name="asal_surat" required="required">
-			</div>
+          			<div class="form-group">
+          				<label>Asal Surat :</label>
+          				<input type="text" class="form-control" placeholder="Masukkan Nomor Surat" name="asal_surat" required="required">
+          			</div>
 
-      <div class="form-group">
-				<label>Tanggal Terima :</label>
-        <input id="datepickerterima" class="form-control" placeholder="Masukkan Tanggal Terima" name="tanggal_terima" required="required" />
-      </div>
+                <div class="form-group">
+          				<label>Tanggal Terima :</label>
+                  <input id="datepickerterima" class="form-control" placeholder="Masukkan Tanggal Terima" name="tanggal_terima" required="required" />
+                </div>
 
-      <div class="form-group">
-				<label>Tanggal Surat :</label>
-        <input id="datepickersurat" class="form-control" placeholder="Masukkan Tanggal Surat" name="tanggal_surat" required="required" />
-      </div>
-            
-			<div class="form-group">
-				<label>Perihal</label>
-				<textarea class="form-control" name="perihal" required="required"></textarea>
-      </div>
-            
-      <div class="form-group">
-				<label>Keterangan</label>
-				<input type="text" class="form-control" placeholder="Masukkan Keterangan Surat" name="keterangan" required="required">
-      </div>
+                <div class="form-group">
+          				<label>Tanggal Surat :</label>
+                  <input id="datepickersurat" class="form-control" placeholder="Masukkan Tanggal Surat" name="tanggal_surat" required="required" />
+                </div>
+                      
+          			<div class="form-group">
+          				<label>Perihal</label>
+          				<textarea class="form-control" name="perihal" required="required"></textarea>
+                </div>
+                      
+                <div class="form-group">
+          				<label>Keterangan</label>
+          				<input type="text" class="form-control" placeholder="Masukkan Keterangan Surat" name="keterangan" required="required">
+                </div>
 
-        <div class="form-group">
-        <label>Ditujukkan : </label>
-          <select class="form-control" name="ditujukan">
-            <option value="Kepala Dinas">Kepala Dinas</option>
-            <option value="Sekretaris">Sekretaris</option>
-            <option value="Bidang Pengelolaan dan Layanan Informasi Publik">Bidang Pengelolaan dan Layanan Informasi Publik</option>
-            <option value="Bidang Pengelolaan Komunikasi Publik">Bidang Pengelolaan Komunikasi Publik</option>
-            <option value="Bidang Teknologi Informasi dan Komunikasi">Bidang Teknologi Informasi dan Komunikasi</option>
-            <option value="Bidang Tata Kelola Pemerintahan Berbasis Elektronik">Bidang Tata Kelola Pemerintahan Berbasis Elektronik</option>
-            <option value="Bidang Persandian dan Statistik">Bidang Persandian dan Statistik</option>
-            <option value="Sub Bagian Umum dan Kepegawaian">Sub Bagian Umum dan Kepegawaian</option>
-            <option value="Sub Bagian Keuangan">Sub Bagian Keuangan</option>
-            <option value="Sub Bagian Perencanaan dan Pelaporan">Sub Bagian Perencanaan dan Pelaporan</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-        <label>Status :</label>
-          <select class="form-control" name="status">
-            <option value="Diambil">Diambil</option>
-            <option value="Diantar">Diantar</option>
-          </select>
-        </div>
+                  <div class="form-group">
+                  <label>Ditujukkan : </label>
+                    <select class="form-control" name="ditujukan">
+                      <option value="Kepala Dinas">Kepala Dinas</option>
+                      <option value="Sekretaris">Sekretaris</option>
+                      <option value="Bidang Pengelolaan dan Layanan Informasi Publik">Bidang Pengelolaan dan Layanan Informasi Publik</option>
+                      <option value="Bidang Pengelolaan Komunikasi Publik">Bidang Pengelolaan Komunikasi Publik</option>
+                      <option value="Bidang Teknologi Informasi dan Komunikasi">Bidang Teknologi Informasi dan Komunikasi</option>
+                      <option value="Bidang Tata Kelola Pemerintahan Berbasis Elektronik">Bidang Tata Kelola Pemerintahan Berbasis Elektronik</option>
+                      <option value="Bidang Persandian dan Statistik">Bidang Persandian dan Statistik</option>
+                      <option value="Sub Bagian Umum dan Kepegawaian">Sub Bagian Umum dan Kepegawaian</option>
+                      <option value="Sub Bagian Keuangan">Sub Bagian Keuangan</option>
+                      <option value="Sub Bagian Perencanaan dan Pelaporan">Sub Bagian Perencanaan dan Pelaporan</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                  <label>Status :</label>
+                    <select class="form-control" name="status">
+                      <option value="Diambil">Diambil</option>
+                      <option value="Diantar">Diantar</option>
+                    </select>
+                  </div>
 
-        <div class="form-group">
-        <label>Oleh</label>
-        <input type="text" class="form-control" placeholder="Masukkan nama petugas" name="oleh" required="required">
-      </div>
+                  <div class="form-group">
+                  <label>Oleh</label>
+                  <input type="text" class="form-control" placeholder="Masukkan nama petugas" name="oleh" required="required">
+                </div>
 
-        <div class="form-group">
-				<label>Foto :</label>
-				<input type="file" name="file" required="required">
-				<p style="color: red">Ekstensi yang diperbolehkan .pdf</p>
-			</div>			
-			<button type="submit" name="upload" value="Upload" class="btn btn-primary">Simpan</button>
-        </form>
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </section><!-- /.content -->
-        </div>
-        <!-- /.row -->
-      </div><!--/. container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include "../template/footer.php" ?>
+                  <div class="form-group">
+          				<label>Foto :</label>
+          				<input type="file" name="file" required="required">
+          				<p style="color: red">Ekstensi yang diperbolehkan .pdf</p>
+          			</div>			
+          			<button type="submit" name="upload" value="Upload" class="btn btn-primary">Simpan</button>
+                  </form>
+                          </div><!-- /.box-body -->
+                        </div><!-- /.box -->
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </section><!-- /.content -->
+                  </div>
+                  <!-- /.row -->
+                </div><!--/. container-fluid -->
+              </section>
+              <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+            <?php include "../template/footer.php" ?>
 
 
 </div>

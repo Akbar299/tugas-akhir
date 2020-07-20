@@ -25,7 +25,7 @@ include "../include/session.php";
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-<div class="wrapper">
+  <div class="wrapper">
 
     <?php
     session_start();
@@ -35,8 +35,8 @@ include "../include/session.php";
       header("location:surat_keluar.php?pesan=gagal");
     }
     ?>
-<?php include "../template/navbar.php" ?>
-<?php include "../template/side-bar.php" ?>
+  <?php include "../template/navbar.php" ?>
+  <?php include "../template/side-bar.php" ?>
 
 
   <!-- Content Wrapper. Contains page content -->
@@ -72,51 +72,51 @@ include "../include/session.php";
                 <div class="box-body">
                   <br>
                   <form action="add_surat_keluar.php" method="post" enctype="multipart/form-data">
-			<div class="form-group">
-				<label>Nomor Surat:</label>
-				<input type="text" class="form-control" placeholder="Masukkan Nomor Surat" name="nomor_surat" required="required">
-			</div>
+            			<div class="form-group">
+            				<label>Nomor Surat:</label>
+            				<input type="text" class="form-control" placeholder="Masukkan Nomor Surat" name="nomor_surat" required="required">
+            			</div>
 
-      <div class="form-group">
-				<label>Tanggal Surat Dibuat :</label>
-        <input id="datepickerdibuat" class="form-control" placeholder="Masukkan Tanggal Surat Dibuat" name="tanggal_surat_dibuat" required="required" />
-      </div>
+                  <div class="form-group">
+            				<label>Tanggal Surat Dibuat :</label>
+                    <input id="datepickerdibuat" class="form-control" placeholder="Masukkan Tanggal Surat Dibuat" name="tanggal_surat_dibuat" required="required" />
+                  </div>
 
-      <div class="form-group">
-        <label>Tujuan Surat :</label>
-        <input type="text" class="form-control" placeholder="Masukkan Tujuan Surat" name="tujuan_surat" required="required">
-      </div>
- 
-			<div class="form-group">
-				<label>Perihal</label>
-				<textarea class="form-control" name="perihal" required="required"></textarea>
-      </div>
-            
-      <div class="form-group">
-				<label>Keterangan</label>
-				<input type="text" class="form-control" placeholder="Masukkan Keterangan" name="keterangan" required="required">
-      </div>
-            
-      <div class="form-group">
-				<label>Foto :</label>
-				<input type="file" name="file" required="required">
-				<p style="color: red">Ekstensi yang diperbolehkan .png | .jpg | .jpeg | .gif</p>
-			</div>			
-			<input type="submit" name="" value="Simpan" class="btn btn-primary">
-        </form>
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </section><!-- /.content -->
-        </div>
-        <!-- /.row -->
-      </div><!--/. container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include "../template/footer.php" ?>
+                  <div class="form-group">
+                    <label>Tujuan Surat :</label>
+                    <input type="text" class="form-control" placeholder="Masukkan Tujuan Surat" name="tujuan_surat" required="required">
+                  </div>
+             
+            			<div class="form-group">
+            				<label>Perihal</label>
+            				<textarea class="form-control" name="perihal" required="required"></textarea>
+                  </div>
+                        
+                  <div class="form-group">
+            				<label>Keterangan</label>
+            				<input type="text" class="form-control" placeholder="Masukkan Keterangan" name="keterangan" required="required">
+                  </div>
+                        
+                  <div class="form-group">
+            				<label>Foto :</label>
+            				<input type="file" name="file" required="required">
+            				<p style="color: red">Ekstensi yang diperbolehkan .png | .jpg | .jpeg | .gif</p>
+            			</div>			
+            			<input type="submit" name="" value="Simpan" class="btn btn-primary">
+                    </form>
+                            </div><!-- /.box-body -->
+                          </div><!-- /.box -->
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </section><!-- /.content -->
+                    </div>
+                    <!-- /.row -->
+                  </div><!--/. container-fluid -->
+                </section>
+                <!-- /.content -->
+              </div>
+              <!-- /.content-wrapper -->
+              <?php include "../template/footer.php" ?>
 
 
 </div>

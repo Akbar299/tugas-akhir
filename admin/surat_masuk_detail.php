@@ -83,61 +83,59 @@ include "../include/session.php";
               <table class='table-form' border='0' width='100%' cellpadding='0' cellspacing='0'>
               <thead>
                   <tr>
-                  <td width='20%'>NIK</td>
-                  <td>: </td>
-                  <td>$surat_masuk[nomor_surat]</td>
+                    <td width='20%'>Nomor Surat</td>
+                    <td>: </td>
+                    <td>$surat_masuk[nomor_surat]</td>
                   </tr>
                   <tr>
-                     <td>Nama Lengkap</td>
-                  <td width='1%'>:</td>
-                  <td>$surat_masuk[asal_surat]</td>
-                 </tr>
-                 <tr> 
-                     <td>Umur</td>
-                  <td width='1%'>:</td>
-                  <td>$surat_masuk[tanggal_terima] Tahun</td>
-                 </tr>
-                 <tr>
-                  <td>Tanggal Lahir</td>
-                     <td width='1%'>:</td>
-                  <td>$surat_masuk[tanggal_surat]</td>
-                 </tr>
-                 <tr>
-                  <td>Alamat</td>
-                  <td width='1%'>:</td>
-                  <td>$surat_masuk[perihal]</td>
-                 </tr>
-                 <tr> 
-                  <td>No Telpon</td>
-                  <td width='1%'>:</td>
-                  <td>$surat_masuk[keterangan]</td>
-                 </tr>
-                <tr> 
-                  <td>No Telpon</td>
-                  <td width='1%'>:</td>
-                  <td>$surat_masuk[ditujukan]</td>
-                 </tr>
-                <tr> 
-                  <td>No Telpon</td>
-                  <td width='1%'>:</td>
-                  <td>$surat_masuk[status]</td>
-                 </tr>
-                                  <tr> 
-                  <td>No Telpon</td>
-                  <td width='1%'>:</td>
-                  <td>$surat_masuk[oleh]</td>
-                 </tr>
-
+                    <td>Asal Surat</td>
+                    <td width='1%'>:</td>
+                    <td>$surat_masuk[asal_surat]</td>
+                  </tr>
                   <tr> 
-                  <td>No Telpon</td>
-                  <td width='1%'>:</td>
-                  <td>$surat_masuk[keterangan]</td>
-                 </tr>
+                    <td>Tanggal Terima</td>
+                    <td width='1%'>:</td>
+                    <td>$surat_masuk[tanggal_terima] Tahun</td>
+                  </tr>
+                  <tr>
+                    <td>Tanggal Surat</td>
+                    <td width='1%'>:</td>
+                    <td>$surat_masuk[tanggal_surat]</td>
+                  </tr>
+                  <tr>
+                    <td>Perihal</td>
+                    <td width='1%'>:</td>
+                    <td>$surat_masuk[perihal]</td>
+                  </tr>
                   <tr> 
-                  <td>No Telpon</td>
-                  <td width='1%'>:</td>
-                  
-                  <td><a href='view_surat.php?id_surat=$surat_masuk[id_surat]' target_blank>Lihat File</a></td>
+                    <td>Keterangan</td>
+                    <td width='1%'>:</td>
+                    <td>$surat_masuk[keterangan]</td>
+                  </tr>
+                  <tr> 
+                    <td>Ditujukan</td>
+                    <td width='1%'>:</td>
+                    <td>$surat_masuk[ditujukan]</td>
+                  </tr>
+                  <tr> 
+                    <td>Status</td>
+                    <td width='1%'>:</td>
+                    <td>$surat_masuk[status]</td>
+                  </tr>
+                  <tr> 
+                    <td>Oleh</td>
+                    <td width='1%'>:</td>
+                    <td>$surat_masuk[oleh]</td>
+                  </tr>
+                  <tr> 
+                    <td>Keterangan</td>
+                    <td width='1%'>:</td>
+                    <td>$surat_masuk[keterangan]</td>
+                  </tr>
+                  <tr> 
+                    <td>File Surat</td>
+                    <td width='1%'>:</td>  
+                    <td><a href='view_surat.php?id_surat=$surat_masuk[id_surat]' target_blank>Lihat File</a></td>
                  </tr>
                 </thead>
                 ";}?>

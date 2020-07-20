@@ -83,34 +83,34 @@ include "../include/session.php";
               <table class='table-form' border='0' width='100%' cellpadding='0' cellspacing='0'>
               <thead>
                   <tr>
-                  <td width='20%'>Nomor Surat</td>
-                  <td>: </td>
-                  <td>$surat_keluar[nomor_surat]</td>
+                    <td width='20%'>Nomor Surat</td>
+                    <td>: </td>
+                    <td>$surat_keluar[nomor_surat]</td>
                   </tr>
                   <tr>
-                  <td>Tanggal Surat Dibuat</td>
-                  <td width='1%'>:</td>
-                  <td>$surat_keluar[tanggal_surat_dibuat]</td>
+                    <td>Tanggal Surat Dibuat</td>
+                    <td width='1%'>:</td>
+                    <td>$surat_keluar[tanggal_surat_dibuat]</td>
                   </tr>
                   <tr> 
-                  <td>Tujuan Surat</td>
-                  <td width='1%'>:</td>
-                  <td>$surat_keluar[tujuan_surat]</td>
+                    <td>Tujuan Surat</td>
+                    <td width='1%'>:</td>
+                    <td>$surat_keluar[tujuan_surat]</td>
                   </tr>
                   <tr>
-                  <td>Perihal</td>
-                  <td width='1%'>:</td>
-                  <td>$surat_keluar[perihal]</td>
+                    <td>Perihal</td>
+                    <td width='1%'>:</td>
+                    <td>$surat_keluar[perihal]</td>
                   </tr>
                   <tr>
-                  <td>Keterangan</td>
-                  <td width='1%'>:</td>
-                  <td>$surat_keluar[keterangan]</td>
+                    <td>Keterangan</td>
+                    <td width='1%'>:</td>
+                    <td>$surat_keluar[keterangan]</td>
                   </tr>
                   <tr> 
-                  <td>No Telpon</td>
-                  <td width='1%'>:</td>
-                  <td><a href='view_surat_keluar.php?id_surat=$surat_keluar[id_surat]' target_blank>Lihat File</a></td>
+                    <td>File Surat</td>
+                    <td width='1%'>:</td>
+                    <td><a href='view_surat_keluar.php?id_surat=$surat_keluar[id_surat]' target_blank>Lihat File</a></td>
                   </tr>
                 </thead>
                 ";}?>
