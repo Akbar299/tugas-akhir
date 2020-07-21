@@ -13,10 +13,13 @@
 </thead>
 	<tbody>
         <?php
-            $no=0; //variable no
-			$querysuratmasuk = mysqli_query ($connect, "SELECT id_surat, nomor_surat, asal_surat, tanggal_terima, tanggal_surat, perihal, keterangan, ditujukan, status, oleh, file_suratmasuk FROM tbl_suratmasuk");
-			if($querysuratmasuk == false){
-				die ("Terjadi Kesalahan : ". mysqli_error($connect));
+			$no=0; //variable no
+			if(isset($_GET['tanggal']) OR isset($_GET['cari'])){
+				$tgl = $_GET['tanggal'];
+				$cari = $_GET['cari'];
+				$querysuratmasuk = mysqli_query($connect,"SELECT * FROM tbl_suratmasuk WHERE tanggal_terima='$tgl' OR nomor_surat LIKE '%".$cari."%' ");
+			}else{
+				$querysuratmasuk = mysqli_query($connect,"SELECT * FROM tbl_suratmasuk ORDER BY tanggal_terima DESC ");
 			}
 			while ($suratmasuk = mysqli_fetch_array ($querysuratmasuk)){
                 $no++;
@@ -31,9 +34,9 @@
 					<td>$suratmasuk[keterangan]</td>
 					<td>$suratmasuk[ditujukan]</td>
 					<td>
-					<a href='#' class='btn btn-danger' onClick='confirm_delete(\"surat_masuk_delete.php?id_surat=$suratmasuk[id_surat]\")'>Delete</a>
-										
-					<a href='surat_masuk_detail.php?id_surat=$suratmasuk[id_surat]' class='btn btn-info'>Detail</a>
+						<a href='surat_masuk_modal_edit.php?id_surat=$suratmasuk[id_surat]' class='open_modal btn btn-warning'>Edit</a> 
+						<a href='#' class='btn btn-danger' onClick='confirm_delete(\"surat_masuk_delete.php?id_surat=$suratmasuk[id_surat]\")'>Delete</a>
+						<a href='surat_masuk_detail.php?id_surat=$suratmasuk[id_surat]' class='btn btn-info'>Detail</a>
 					</td>
 				</tr>";
 			}

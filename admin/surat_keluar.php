@@ -61,7 +61,6 @@ include "../include/session.php";
       <form method="POST" action="form_surat_keluar.php">
         <button type="submit" class="btn btn-primary">Tambah Surat</button>
         </form>
-      
       <!-- Main content -->
         <section class="content">
           <div class="row">
@@ -96,7 +95,7 @@ include "../include/session.php";
                     </div>
                   </div>
                 </div>
-              </div>
+          </div>
         <!-- /.row -->
       </div><!--/. container-fluid -->
     </section>

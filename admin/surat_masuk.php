@@ -58,10 +58,23 @@ include "../include/session.php";
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-      <form method="POST" action="form_surat_masuk.php">
-        <button type="submit" class="btn btn-primary">Tambah Surat</button>
-        </form>
-      
+      <a href="form_surat_masuk.php" class="btn btn-primary mb-2">Tambah Surat</a>
+      <form>
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <input type="date" name="tanggal" class="form-control mb-2">
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-info mb-2">Filter Data</button>
+          </div>
+          <div class="col-auto">
+            <input type="text" name="cari" class="form-control mb-2" id="inlineFormInput" placeholder="Cari">
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-warning mb-2" >Cari Data</button>
+          </div>
+        </div>
+      </form>
       <!-- Main content -->
         <section class="content">
           <div class="row">
@@ -96,7 +109,11 @@ include "../include/session.php";
                     </div>
                   </div>
                 </div>
-              </div>
+        </div>
+
+        <!-- Modal Popup infaq Edit -->
+        <div id="ModalEditSuratMasuk" class="modal fade" tabindex="-1" role="dialog"></div>
+    
         <!-- /.row -->
       </div><!--/. container-fluid -->
     </section>
@@ -106,12 +123,32 @@ include "../include/session.php";
 
 
 
-	<!-- Javascript Delete -->
-	<script>
-		function confirm_delete(delete_url){
-			$("#modal_delete").modal('show', {backdrop: 'static'});
-			document.getElementById('delete_link').setAttribute('href', delete_url);
-		}
+  <!-- Javascript Delete -->
+  <script>
+    function confirm_delete(delete_url){
+      $("#modal_delete").modal('show', {backdrop: 'static'});
+      document.getElementById('delete_link').setAttribute('href', delete_url);
+    }
+  </script>
+
+	<!-- Javascript Edit--> 
+  <script type="text/javascript">
+		$(document).ready(function () {
+		
+		// Users
+		$(".open_modal").click(function(e) {
+			var m = $(this).attr("id_surat");
+				$.ajax({
+					url: "surat_masuk_modal_edit.php",
+					type: "GET",
+					data : {id_surat: m,},
+					success: function (ajaxData){
+					$("#ModalEditSuratMasuk").html(ajaxData);
+					$("#ModalEditSuratMasuk").modal('show',{backdrop: 'true'});
+					}
+				});
+			});
+		});
 	</script>
 
 

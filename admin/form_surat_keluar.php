@@ -98,7 +98,7 @@ include "../include/session.php";
                   </div>
                         
                   <div class="form-group">
-            				<label>Foto :</label>
+            				<label>File :</label>
             				<input type="file" name="file" required="required">
             				<p style="color: red">Ekstensi yang diperbolehkan .png | .jpg | .jpeg | .gif</p>
             			</div>			
