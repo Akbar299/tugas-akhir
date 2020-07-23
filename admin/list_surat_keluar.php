@@ -12,11 +12,13 @@
 </thead>
 	<tbody>
         <?php
-            $no=0; //variable no
-			$querysuratkeluar = mysqli_query ($connect, "SELECT id_surat, nomor_surat, tanggal_surat_dibuat,
-				tujuan_surat, perihal, keterangan, file_suratkeluar FROM tbl_suratkeluar");
-			if($querysuratkeluar == false){
-				die ("Terjadi Kesalahan : ". mysqli_error($connect));
+			$no=0; //variable no
+			if(isset($_GET['tanggal']) OR isset($_GET['cari'])){
+				$tgl = $_GET['tanggal'];
+				$cari = $_GET['cari'];
+				$querysuratkeluar = mysqli_query($connect,"SELECT * FROM tbl_suratkeluar WHERE tanggal_surat_dibuat='$tgl' AND nomor_surat LIKE '%".$cari."%' ");
+			}else{
+				$querysuratkeluar = mysqli_query($connect,"SELECT * FROM tbl_suratkeluar ORDER BY tanggal_surat_dibuat DESC ");
 			}
 			while ($suratkeluar = mysqli_fetch_array ($querysuratkeluar)){
                 $no++;	
@@ -29,7 +31,7 @@
 					<td>$suratkeluar[perihal]</td>
 					<td>$suratkeluar[keterangan]</td>
 					<td>
-					<a href='surat_masuk_modal_edit.php?id_surat=$suratkeluark[id_surat]' class='open_modal btn btn-warning'>Edit</a> 
+					<a href='surat_keluar_modal_edit.php?id_surat=$suratkeluar[id_surat]' class='open_modal btn btn-warning'>Edit</a> 
 					<a href='#' class='btn btn-danger' onClick='confirm_delete(\"surat_keluar_delete.php?id_surat=$suratkeluar[id_surat]\")'>Delete</a>					
 					<a href='surat_keluar_detail.php?id_surat=$suratkeluar[id_surat]' class='btn btn-info'>Detail</a>			
 					</td>

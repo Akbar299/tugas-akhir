@@ -111,7 +111,7 @@ include "../include/session.php";
                 </div>
         </div>
 
-          <!-- Modal Popup Edit -->
+        <!-- Modal Popup Edit -->
         <div id="ModalEditSuratKeluar" class="modal fade" tabindex="-1" role="dialog"></div>
         <!-- /.row -->
       </div><!--/. container-fluid -->
@@ -130,26 +130,25 @@ include "../include/session.php";
       document.getElementById('delete_link').setAttribute('href', delete_url);
     }
   </script>
-
-  <!-- Javascript Edit--> 
+	<!-- Javascript Edit--> 
   <script type="text/javascript">
-    $(document).ready(function () {
-    
-    // Users
-    $(".open_modal").click(function(e) {
-      var m = $(this).attr("id_surat");
-        $.ajax({
-          url: "surat_keluar_modal_edit.php",
-          type: "GET",
-          data : {id_surat: m,},
-          success: function (ajaxData){
-          $("#ModalEditSuratKeluar").html(ajaxData);
-          $("#ModalEditSuratKeluar").modal('show',{backdrop: 'true'});
-          }
-        });
-      });
-    });
-  </script>
+		$(document).ready(function () {
+		
+		// Users
+		$(".open_modal").click(function(e) {
+			var m = $(this).attr("id_surat");
+				$.ajax({
+					url: "surat_keluar_modal_edit.php",
+					type: "GET",
+					data : {id_surat: m,},
+					success: function (ajaxData){
+					$("#ModalEditSuratKeluar").html(ajaxData);
+					$("#ModalEditSuratKeluar").modal('show',{backdrop: 'true'});
+					}
+				});
+			});
+		});
+	</script>
 
 
 </div>

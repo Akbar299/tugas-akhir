@@ -17,7 +17,7 @@
 			if(isset($_GET['tanggal']) OR isset($_GET['cari'])){
 				$tgl = $_GET['tanggal'];
 				$cari = $_GET['cari'];
-				$querysuratmasuk = mysqli_query($connect,"SELECT * FROM tbl_suratmasuk WHERE tanggal_terima='$tgl' OR nomor_surat LIKE '%".$cari."%' ");
+				$querysuratmasuk = mysqli_query($connect,"SELECT * FROM tbl_suratmasuk WHERE tanggal_terima='$tgl' AND nomor_surat LIKE '%".$cari."%' ");
 			}else{
 				$querysuratmasuk = mysqli_query($connect,"SELECT * FROM tbl_suratmasuk ORDER BY tanggal_terima DESC ");
 			}
