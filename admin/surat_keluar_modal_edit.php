@@ -1,6 +1,14 @@
 <?php
 include "../include/connect.php";
 include "../include/session.php"; 
+$id_surat	= $_GET["id_surat"];
+
+$querysuratkeluar = mysqli_query($connect, "SELECT * FROM tbl_suratkeluar WHERE id_surat='$id_surat'");
+if($querysuratkeluar == false){
+	die ("Terjadi Kesalahan : ". mysqli_error($connect));
+}
+while($suratkeluar = mysqli_fetch_array($querysuratkeluar)) {
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +17,7 @@ include "../include/session.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Surat Masuk</title>
+  <title>Edit Surat keluar</title>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
@@ -25,18 +33,18 @@ include "../include/session.php";
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-<div class="wrapper">
+  <div class="wrapper">
 
     <?php
     session_start();
 
     // cek apakah sudah login
     if ($_SESSION['role']=="") {
-      header("location:surat_masuk.php?pesan=gagal");
+      header("location:surat_keluar.php?pesan=gagal");
     }
     ?>
-<?php include "../template/navbar.php" ?>
-<?php include "../template/side-bar.php" ?>
+  <?php include "../template/navbar.php" ?>
+  <?php include "../template/side-bar.php" ?>
 
 
   <!-- Content Wrapper. Contains page content -->
@@ -46,12 +54,12 @@ include "../include/session.php";
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Surat Masuk</h1>
+            <h1 class="m-0 text-dark">Edit Surat Keluar</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Surat Masuk</li>
+              <li class="breadcrumb-item active">Edit Surat Keluar</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -70,101 +78,63 @@ include "../include/session.php";
                 <div class="box-header">
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <br>
-                              <?php
-            $id_surat = $_GET["id_surat"];
-            $querysuratmasuk = mysqli_query($connect, "SELECT * FROM tbl_suratmasuk WHERE id_surat='$id_surat'");
-            if($querysuratmasuk == false) {
-              die("Terjadi Kesalahan : ".mysqli_error($connect));
-            }
-            while ($surat_masuk = mysqli_fetch_array($querysuratmasuk)){
-              echo "
-              <div class='content'>
-              <table class='table-form' border='0' width='100%' cellpadding='0' cellspacing='0'>
-              <thead>
-                  <tr>
-                    <td width='20%'>Nomor Surat</td>
-                    <td>: </td>
-                    <td>$surat_masuk[nomor_surat]</td>
-                  </tr>
-                  <tr>
-                    <td>Asal Surat</td>
-                    <td width='1%'>:</td>
-                    <td>$surat_masuk[asal_surat]</td>
-                  </tr>
-                  <tr> 
-                    <td>Tanggal Terima</td>
-                    <td width='1%'>:</td>
-                    <td>$surat_masuk[tanggal_terima]</td>
-                  </tr>
-                  <tr>
-                    <td>Tanggal Surat</td>
-                    <td width='1%'>:</td>
-                    <td>$surat_masuk[tanggal_surat]</td>
-                  </tr>
-                  <tr>
-                    <td>Perihal</td>
-                    <td width='1%'>:</td>
-                    <td>$surat_masuk[perihal]</td>
-                  </tr>
-                  <tr> 
-                    <td>Keterangan</td>
-                    <td width='1%'>:</td>
-                    <td>$surat_masuk[keterangan]</td>
-                  </tr>
-                  <tr> 
-                    <td>Ditujukan</td>
-                    <td width='1%'>:</td>
-                    <td>$surat_masuk[ditujukan]</td>
-                  </tr>
-                  <tr> 
-                    <td>Status</td>
-                    <td width='1%'>:</td>
-                    <td>$surat_masuk[status]</td>
-                  </tr>
-                  <tr> 
-                    <td>Oleh</td>
-                    <td width='1%'>:</td>
-                    <td>$surat_masuk[oleh]</td>
-                  </tr>
-                  <tr> 
-                    <td>Keterangan</td>
-                    <td width='1%'>:</td>
-                    <td>$surat_masuk[keterangan]</td>
-                  </tr>
-                  <tr> 
-                    <td>File Surat</td>
-                    <td width='1%'>:</td>  
-                    <td><a href='view_surat.php?id_surat=$surat_masuk[id_surat]' target_blank>Lihat File</a></td>
-                 </tr>
-                </thead>
-                ";}?>
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </section><!-- /.content -->
-        </div>
-        <!-- /.row -->
-      </div><!--/. container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include "../template/footer.php" ?>
+                <br>
+				        <form action="surat_keluar_edit.php" method="post" enctype="multipart/form-data">
+				        <input name="id_surat" type="hidden" class="form-control" value="<?php echo $suratkeluar["id_surat"]; ?>" />
+          			<div class="form-group">
+          				<label>Nomor Surat:</label>
+          				<input type="text" class="form-control" value="<?php echo $suratkeluar["nomor_surat"]; ?>" name="nomor_surat" required="required">
+          			</div>
+
+                <div class="form-group">
+          				<label>Tanggal Surat Dibuat :</label>
+                  <input id="datepickerdibuat" class="form-control" value="<?php echo $suratkeluar["tanggal_surat_dibuat"]; ?>" name="tanggal_surat_dibuat" required="required" />
+                </div>
+
+                <div class="form-group">
+                    <label>Tujuan Surat :</label>
+                    <input type="text" class="form-control" value="<?php echo $suratkeluar["tujuan_surat"]; ?>"name="tujuan_surat" required="required">
+                </div>
+   
+          			<div class="form-group">
+          				<label>Perihal</label>
+          				<textarea class="form-control" name="perihal" required="required"><?php echo $suratkeluar["perihal"]; ?></textarea>
+                </div>
+                      
+                <div class="form-group">
+          				<label>Keterangan</label>
+          				<input type="text" class="form-control" value="<?php echo $suratkeluar["keterangan"]; ?>" name="keterangan" required="required">
+                </div>
+                  
+                <div class="form-group">
+          			<label>File :</label>
+						    <input type="file" name="file" ><br>
+						    <label><?php echo $suratkeluar["file_suratkeluar"]; ?></label>
+          			<p style="color: red">Ekstensi yang diperbolehkan .pdf</p>
+          			</div>			
+          			<button type="submit" name="upload" value="Upload" class="btn btn-primary">Simpan</button>
+                  </form>
+                          </div><!-- /.box-body -->
+                        </div><!-- /.box -->
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </section><!-- /.content -->
+                  </div>
+                  <!-- /.row -->
+                </div><!--/. container-fluid -->
+              </section>
+              <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+            <?php include "../template/footer.php" ?>
 
 
 </div>
 <!-- ./wrapper -->
 <script>
-        $('#datepickerterima').datepicker({
+        $('#datepickerdibuat').datepicker({
             uiLibrary: 'bootstrap4'
         });
-
-        $('#datepickersurat').datepicker({
-            uiLibrary: 'bootstrap4'
-        });
-        
 </script>
 
 <script>
@@ -206,3 +176,4 @@ include "../include/session.php";
 <!-- PAGE SCRIPTS -->
 <script src="dist/js/pages/dashboard2.js"></script>
 </body>
+<?php }

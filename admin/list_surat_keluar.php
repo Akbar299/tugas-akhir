@@ -29,7 +29,8 @@
 					<td>$suratkeluar[perihal]</td>
 					<td>$suratkeluar[keterangan]</td>
 					<td>
-					<a href='#' class='btn btn-danger' onClick='confirm_delete(\"surat_keluar_delete.php?id_surat=$suratkeluar[id_surat]\")'>Delete</a>						
+					<a href='surat_masuk_modal_edit.php?id_surat=$suratkeluark[id_surat]' class='open_modal btn btn-warning'>Edit</a> 
+					<a href='#' class='btn btn-danger' onClick='confirm_delete(\"surat_keluar_delete.php?id_surat=$suratkeluar[id_surat]\")'>Delete</a>					
 					<a href='surat_keluar_detail.php?id_surat=$suratkeluar[id_surat]' class='btn btn-info'>Detail</a>			
 					</td>
 				</tr>";

@@ -28,9 +28,7 @@ if($file_suratmasuk != "") {
         if(in_array($ekstensi, $ekstensi_diperbolehkan) === true)  {     
                 move_uploaded_file($file_tmp, 'file_suratmasuk/'.$nama_file_baru); //memindah file gambar ke folder file suratmasuk
                   // jalankan query INSERT untuk menambah data ke database pastikan sesuai urutan (id tidak perlu karena dibikin otomatis)
-                  $query = "INSERT INTO tbl_suratmasuk (nomor_surat, asal_surat, tanggal_terima, tanggal_surat, perihal, keterangan,
-				  ditujukan, status, oleh,  file_suratmasuk) VALUES ('$nomor_surat', '$asal_surat', '$tanggal_terima', '$tanggal_surat', '$perihal', 
-				  '$keterangan', '$ditujukan', '$status', '$oleh', '$nama_file_baru')";
+                  $query = "INSERT INTO tbl_suratmasuk (nomor_surat, asal_surat, tanggal_terima, tanggal_surat, perihal, keterangan, ditujukan, status, oleh,  file_suratmasuk) VALUES ('$nomor_surat', '$asal_surat', '$tanggal_terima', '$tanggal_surat', '$perihal', '$keterangan', '$ditujukan', '$status', '$oleh', '$nama_file_baru')";
                   $result = mysqli_query($connect, $query);
                   // periska query apakah ada error
                   if(!$result){
@@ -47,9 +45,7 @@ if($file_suratmasuk != "") {
                 echo "<script>alert('Ekstensi File yang hanya diperbolehkan PDF.');window.location='form_surat_masuk.php';</script>";
             }
 } else {
-   $query = "INSERT INTO tbl_suratmasuk (nomor_surat, asal_surat, tanggal_terima, tanggal_surat, perihal, keterangan,
-   ditujukan, status, oleh,  file_suratmasuk) VALUES ('$nomor_surat', '$asal_surat', '$tanggal_terima', '$tanggal_surat', '$perihal', 
-				  '$keterangan', '$ditujukan', '$status', '$oleh', null)";
+   $query = "INSERT INTO tbl_suratmasuk (nomor_surat, asal_surat, tanggal_terima, tanggal_surat, perihal, keterangan, ditujukan, status, oleh,  file_suratmasuk) VALUES ('$nomor_surat', '$asal_surat', '$tanggal_terima', '$tanggal_surat', '$perihal', '$keterangan', '$ditujukan', '$status', '$oleh', null)";
                   $result = mysqli_query($connect, $query);
                   // periska query apakah ada error
                   if(!$result){

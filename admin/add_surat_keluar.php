@@ -43,9 +43,7 @@ if($file_suratkeluar != "") {
 		  if(in_array($ekstensi, $ekstensi_diperbolehkan) === true)  {     
 				  move_uploaded_file($file_tmp, 'file_suratkeluar/'.$nama_file_baru); //memindah file gambar ke folder file suratmasuk
 					// jalankan query INSERT untuk menambah data ke database pastikan sesuai urutan (id tidak perlu karena dibikin otomatis)
-					$query = "INSERT INTO tbl_suratkeluar (nomor_surat, tanggal_surat_dibuat, tujuan_surat, perihal,
-					keterangan,  file_suratkeluar) VALUES ('$nomor_surat', '$tanggal_surat_dibuat', '$tujuan_surat', '$perihal',
-					'$keterangan', '$nama_file_baru')";
+					$query = "INSERT INTO tbl_suratkeluar (nomor_surat, tanggal_surat_dibuat, tujuan_surat, perihal, keterangan,  file_suratkeluar) VALUES ('$nomor_surat', '$tanggal_surat_dibuat', '$tujuan_surat', '$perihal', '$keterangan', '$nama_file_baru')";
 					$result = mysqli_query($connect, $query);
 					// periska query apakah ada error
 					if(!$result){
@@ -62,9 +60,7 @@ if($file_suratkeluar != "") {
 				  echo "<script>alert('Ekstensi File yang hanya diperbolehkan PDF.');window.location='form_surat_keluar.php';</script>";
 			  }
   } else {
-	 $query = "INSERT INTO tbl_suratkeluar (nomor_surat, tanggal_surat_dibuat, tujuan_surat, perihal,
-	 keterangan,  file_suratkeluar) VALUES ('$nomor_surat', '$tanggal_surat_dibuat', '$tujuan_surat', '$perihal',
-					'$keterangan', null)";
+	 $query = "INSERT INTO tbl_suratkeluar (nomor_surat, tanggal_surat_dibuat, tujuan_surat, perihal, keterangan,  file_suratkeluar) VALUES ('$nomor_surat', '$tanggal_surat_dibuat', '$tujuan_surat', '$perihal', '$keterangan', null)";
 					$result = mysqli_query($connect, $query);
 					// periska query apakah ada error
 					if(!$result){

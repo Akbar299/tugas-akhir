@@ -111,7 +111,7 @@ include "../include/session.php";
                 </div>
         </div>
 
-        <!-- Modal Popup infaq Edit -->
+        <!-- Modal Popup Edit -->
         <div id="ModalEditSuratMasuk" class="modal fade" tabindex="-1" role="dialog"></div>
     
         <!-- /.row -->
