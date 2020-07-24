@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
-$user = "bellabeen";
-$pass = "kepoajalu";
+$user = "root";
+$pass = "";
 $name = "tugasakhir";
 
 $connect = mysqli_connect($host, $user, $pass) or die("Koneksi ke database Gagal!");

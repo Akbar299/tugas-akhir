@@ -29,7 +29,9 @@
 									<td>$suratmasuk[tanggal_surat]</td>
 									<td>$suratmasuk[perihal]</td>
 									<td>$suratmasuk[ditujukan]</td>
-									<td>$suratmasuk</td>
+									<td>
+										<a href='surat_masuk_detail.php?id_surat=$suratmasuk[id_surat]' class='btn btn-info'>Detail</a>
+									</td>
 								</tr>";
 						}
 					?>

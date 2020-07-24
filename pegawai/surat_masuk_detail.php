@@ -35,8 +35,8 @@ include "../include/session.php";
       header("location:surat_masuk.php?pesan=gagal");
     }
     ?>
-<?php include "../template/navbar.php" ?>
-<?php include "../template/side-bar.php" ?>
+<?php include "../template/navbar_pegawai.php" ?>
+<?php include "../template/side-bar_pegawai.php" ?>
 
 
   <!-- Content Wrapper. Contains page content -->
@@ -130,7 +130,7 @@ include "../include/session.php";
                   <tr> 
                     <td>File Surat</td>
                     <td width='1%'>:</td>  
-                    <td><a href='view_surat.php?id_surat=$surat_masuk[id_surat]' target_blank>Lihat File</a></td>
+                    <td><a href='view_surat_masuk.php?id_surat=$surat_masuk[id_surat]' target_blank>Lihat File</a></td>
                  </tr>
                 </thead>
                 ";}?>
@@ -146,7 +146,7 @@ include "../include/session.php";
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <?php include "../template/footer.php" ?>
+  <?php include "../template/footer_pegawai.php" ?>
 
 
 </div>

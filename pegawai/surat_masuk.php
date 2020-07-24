@@ -58,6 +58,15 @@ include "../include/session.php";
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+        <form>
+          <div class="form-row align-items-center">
+          <div class="col-auto">
+            <input type="date" name="tanggal" class="form-control mb-2">
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-info mb-2">Filter Data</button>
+          </div>
+        </form>
         
 
           <!-- fix for small devices only -->

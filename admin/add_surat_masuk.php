@@ -7,14 +7,14 @@ include "../include/session.php";
 
 $nomor_surat	 	    = $_POST["nomor_surat"];
 $asal_surat	 	    	= $_POST["asal_surat"];
-$tanggal_terima	 	    = date('Y-m-d',strtotime($_POST["tanggal_terima"]));
-$tanggal_surat 	    	= date('Y-m-d',strtotime($_POST["tanggal_surat"]));
-$perihal	 	    	= $_POST["perihal"];
+$tanggal_terima	 	  = date('Y-m-d',strtotime($_POST["tanggal_terima"]));
+$tanggal_surat 	    = date('Y-m-d',strtotime($_POST["tanggal_surat"]));
+$perihal	 	    	  = $_POST["perihal"];
 $keterangan	 	    	= $_POST["keterangan"];
 $ditujukan	 	    	= $_POST["ditujukan"];
-$status					= $_POST["status"];
-$oleh					= $_POST["oleh"];
-$file_suratmasuk = $_FILES['file']['name'];
+$status					    = $_POST["status"];
+$oleh					      = $_POST["oleh"];
+$file_suratmasuk    = $_FILES['file']['name'];
 
 
 //cek dulu jika ada file jalankan coding ini
