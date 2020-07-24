@@ -13,9 +13,11 @@
 	<tbody>
                     <?php
                         $no=0; //variable no
-						$querysuratmasuk = mysqli_query ($connect, "SELECT * FROM tbl_suratmasuk, tbl_user WHERE ditujukan=ruangan AND username='$_SESSION[username]' ORDER BY ditujukan DESC LIMIT 6");
-						if($querysuratmasuk == false){
-							die ("Terjadi Kesalahan : ". mysqli_error($connect));
+                        if(isset($_GET['tanggal'])){
+							$tgl = $_GET['tanggal'];
+							$querysuratmasuk = mysqli_query($connect,"SELECT * FROM tbl_suratmasuk WHERE tanggal_terima='$tgl'");
+						}else{
+							$querysuratmasuk = mysqli_query ($connect, "SELECT * FROM tbl_suratmasuk, tbl_user WHERE ditujukan=ruangan AND username='$_SESSION[username]' ORDER BY ditujukan DESC LIMIT 6");
 						}
 						while ($suratmasuk = mysqli_fetch_array ($querysuratmasuk)){
                             $no++;
