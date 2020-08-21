@@ -79,7 +79,7 @@ include "../include/session.php";
 
           			<div class="form-group">
           				<label>Asal Surat :</label>
-          				<input type="text" class="form-control" placeholder="Masukkan Nomor Surat" name="asal_surat" required="required">
+          				<input type="text" class="form-control" placeholder="Masukkan Asal Surat" name="asal_surat" required="required">
           			</div>
 
                 <div class="form-group">

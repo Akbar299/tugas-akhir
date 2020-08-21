@@ -58,7 +58,7 @@ include "../include/session.php";
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-      <a href="form_surat_masuk.php" class="btn btn-primary mb-2">Tambah Surat</a>
+      <a href="form_surat_keluar.php" class="btn btn-primary mb-2">Tambah Surat</a>
       <form>
         <div class="form-row align-items-center">
           <div class="col-auto">

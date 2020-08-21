@@ -8,6 +8,7 @@
         <th>Perihal</th>
         <th>Keterangan</th>
         <th>Ditujukan</th>
+        <th>Waktu Entry</th>
         <th>Aksi</th>
 	</tr>
 </thead>
@@ -17,7 +18,7 @@
 			if(isset($_GET['tanggal']) OR isset($_GET['cari'])){
 				$tgl = $_GET['tanggal'];
 				$cari = $_GET['cari'];
-				$querysuratmasuk = mysqli_query($connect,"SELECT * FROM tbl_suratmasuk WHERE tanggal_terima='$tgl' AND nomor_surat LIKE '%".$cari."%' ");
+				$querysuratmasuk = mysqli_query($connect,"SELECT * FROM tbl_suratmasuk WHERE tanggal_terima='$tgl' OR nomor_surat LIKE '%".$cari."%'");
 			}else{
 				$querysuratmasuk = mysqli_query($connect,"SELECT * FROM tbl_suratmasuk ORDER BY tanggal_terima DESC ");
 			}
@@ -33,6 +34,7 @@
 					<td>$suratmasuk[perihal]</td>
 					<td>$suratmasuk[keterangan]</td>
 					<td>$suratmasuk[ditujukan]</td>
+					<td>$suratmasuk[waktuentry]</td>
 					<td>
 						<a href='surat_masuk_modal_edit.php?id_surat=$suratmasuk[id_surat]' class='open_modal btn btn-warning'>Edit</a> 
 						<a href='#' class='btn btn-danger' onClick='confirm_delete(\"surat_masuk_delete.php?id_surat=$suratmasuk[id_surat]\")'>Delete</a>

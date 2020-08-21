@@ -6,7 +6,7 @@
         <th>Tujuan Surat</th>
         <th>Perihal</th>
         <th>Keterangan</th>
-        
+
         <th>Aksi</th>
 	</tr>
 </thead>
@@ -16,7 +16,7 @@
 			if(isset($_GET['tanggal']) OR isset($_GET['cari'])){
 				$tgl = $_GET['tanggal'];
 				$cari = $_GET['cari'];
-				$querysuratkeluar = mysqli_query($connect,"SELECT * FROM tbl_suratkeluar WHERE tanggal_surat_dibuat='$tgl' AND nomor_surat LIKE '%".$cari."%' ");
+				$querysuratkeluar = mysqli_query($connect,"SELECT * FROM tbl_suratkeluar WHERE tanggal_surat_dibuat='$tgl' OR nomor_surat LIKE '%".$cari."%' ");
 			}else{
 				$querysuratkeluar = mysqli_query($connect,"SELECT * FROM tbl_suratkeluar ORDER BY tanggal_surat_dibuat DESC ");
 			}
