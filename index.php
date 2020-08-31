@@ -14,7 +14,7 @@
   <!-- Ionicons -->
   <link rel="stylesheet" type="text/css" href="./assets/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" type="text/css" href="./assets/css/AdminLTE.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/adminlte.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" type="text/css" href="./assets/css/blue.css">
 
@@ -27,6 +27,15 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+<table>
+  <tr>
+    <td><img src="./assets/img/lampunglogo.png" alt="gambar logo lampung" height="100px"
+    align="right" class="rounded float-right" border="5"/></td>
+    <td><img src="./assets/img/index.jpeg" alt="gambar duniailkom" height="100px"
+    align="left" class="rounded float-left" border="5"/></td>
+  </tr>
+</table>
   <a><b>Sistem Informasi Pengelolaan dan Distribusi Surat</b></a><br>
   <a><b>Dinas Komunikasi Informatika dan Statistik Provinsi Lampung</b></a>
 </head>

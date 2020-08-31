@@ -26,6 +26,9 @@ if($cek > 0){
  
 		// buat session login dan username
 		$_SESSION['username'] = $username;
+		$_SESSION['nik'] = $data['nik'];
+		$_SESSION['nama'] = $data['nama'];
+		$_SESSION['ruangan'] = $data['ruangan'];
 		$_SESSION['role'] = "admin";
 		// alihkan ke halaman dashboard admin
 		header("location:admin/home.php");
@@ -35,8 +38,10 @@ if($cek > 0){
 		$_SESSION["login"] = true;
 		// buat session login dan username
 		$_SESSION['username'] = $username;
-		$_SESSION['role'] = "pegawai";
+		$_SESSION['nik'] = $data['nik'];
+		$_SESSION['nama'] = $data['nama'];
 		$_SESSION['ruangan'] = $data['ruangan'];
+		$_SESSION['role'] = "pegawai";
 		// alihkan ke halaman dashboard pegawai
 		header("location:pegawai/home.php");
  

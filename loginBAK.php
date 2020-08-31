@@ -96,3 +96,17 @@
 </script>
 </body>
 </html>
+
+
+
+<?php
+                        $bulan = mysqli_query($connect,"SELECT * FROM tbl_suratmasuk WHERE YEAR(tanggal_terima) = '2020' ORDER BY id_surat ASC");
+                        $datatahun = mysqli_fetch_array($bulan);
+                      ?>
+
+<?php
+$bulan       = mysqli_query($koneksi, "SELECT bulan FROM penjualan WHERE tahun='2016' order by id asc");
+$penghasilan = mysqli_query($koneksi, "SELECT hasil_penjualan FROM penjualan WHERE tahun='2016' order by id asc");
+?>
+
+https://belajarphp.net/membuat-grafik-dengan-php-mysql-chartjs/

@@ -17,7 +17,7 @@
         <div class="info">
           <a href="#" class="d-block"><?php echo $_SESSION['username'];?></a>
           <a href="#" class="d-block"><?php echo $_SESSION['role'];?></a>
-          <a href="#" class="d-block"><?php echo $_SESSION['ruangan']=$data['ruangan'];;?></a>
+          <a href="#" class="d-block"><?php echo $_SESSION['ruangan']=$data['ruangan'];?></a>
         </div>
       </div>
 

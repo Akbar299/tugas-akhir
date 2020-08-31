@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../include/connect.php";
 include "../include/session.php"; 
 ?>
@@ -9,7 +10,7 @@ include "../include/session.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Surat Masuk</title>
+  <title>Home | SiDis</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css">
@@ -17,6 +18,7 @@ include "../include/session.php";
   <link rel="stylesheet" href="../overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../assets/css/adminlte.min.css">
+  <link rel="stylesheet" href="../assets/css/Chart.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -24,7 +26,7 @@ include "../include/session.php";
 <div class="wrapper">
 
     <?php
-    session_start();
+    
 
     // cek apakah sudah login
     if ($_SESSION['role']=="") {
@@ -46,8 +48,7 @@ include "../include/session.php";
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Surat Masuk</li>
+              <li class="breadcrumb-item active"><a href="#">Home</a></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -143,13 +144,183 @@ include "../include/session.php";
                   <!-- ./col -->
                 </div>
                 <!-- /.row -->
-                        </div><!-- /.box-body -->
-                      </div><!-- /.box -->
-                      <!-- Modal Popup untuk delete--> 
-                    </div>
-                  </div>
-                  </section><!-- /.content -->
+
+
+                        <!-- Main row -->
+        <div class="row">
+          <!-- Left col -->
+          <section class="col-lg-7 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-pie mr-1"></i>
+                  Grafik Surat
+                </h3>
+                <!-- <div class="card-tools">
+                  <ul class="nav nav-pills ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
+                    </li>
+                  </ul>
+                </div> -->
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content p-0">
+                  <!-- Morris chart - Sales -->
+                  <div class="chart tab-pane active" id="revenue-chart"
+                       style="position: relative; height: 300px;">
+                       <canvas id="myChart"></canvas>                      
+                   </div>
                 </div>
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </section>
+          <!-- /.Left col -->
+          <!-- right col (We are only adding the ID to make the widgets sortable)-->
+          <section class="col-lg-5 connectedSortable">
+
+            <!-- Map card -->
+            <div class="card bg-gradient-primary">
+              <div class="card-header border-0">
+                <h3 class="card-title">
+                  Profile
+                </h3>
+                <!-- card tools -->
+                <div class="card-tools">
+                  <button type="button"
+                          class="btn btn-primary btn-sm daterange"
+                          data-toggle="tooltip"
+                          title="Date range">
+                    <i class="far fa-calendar-alt"></i>
+                  </button>
+                  <button type="button"
+                          class="btn btn-primary btn-sm"
+                          data-card-widget="collapse"
+                          data-toggle="tooltip"
+                          title="Collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <div class="card-body">
+                <!-- <div id="world-map" style="height: 250px; width: 100%;"></div> -->
+                <ul class="todo-list" data-widget="todo-list">
+                  <li>
+                    <!-- drag handle -->
+                    <span class="handle">
+                      <i class="fas fa-ellipsis-v"></i>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <!-- todo text -->
+                    <span class="text">Username : </span>
+                    <!-- Emphasis label -->
+                    <span class="text"><?php echo $_SESSION['username'];?></span>
+                    <!-- <small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small> -->
+                    <!-- General tools such as edit or delete-->
+                    <div class="tools">
+                      <i class="fas fa-edit"></i>
+                      <i class="fas fa-trash-o"></i>
+                    </div>
+                  </li>
+                  <li>
+                    <!-- drag handle -->
+                    <span class="handle">
+                      <i class="fas fa-ellipsis-v"></i>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <!-- todo text -->
+                    <span class="text">Nama : </span>
+                    <!-- Emphasis label -->
+                    <span class="text"><?php echo $_SESSION['nama'];?></span>
+                    <!-- <small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small> -->
+                    <!-- General tools such as edit or delete-->
+                    <div class="tools">
+                      <i class="fas fa-edit"></i>
+                      <i class="fas fa-trash-o"></i>
+                    </div>
+                  </li>
+                  <li>
+                    <!-- drag handle -->
+                    <span class="handle">
+                      <i class="fas fa-ellipsis-v"></i>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <!-- todo text -->
+                    <span class="text">NIK : </span>
+                    <!-- Emphasis label -->
+                    <span class="text"><?php echo $_SESSION['nik'];?></span>
+                    <!-- <small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small> -->
+                    <!-- General tools such as edit or delete-->
+                    <div class="tools">
+                      <i class="fas fa-edit"></i>
+                      <i class="fas fa-trash-o"></i>
+                    </div>
+                  </li>
+                  <li>
+                    <!-- drag handle -->
+                    <span class="handle">
+                      <i class="fas fa-ellipsis-v"></i>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <!-- todo text -->
+                    <span class="text">Role : </span>
+                    <!-- Emphasis label -->
+                    <span class="text"><?php echo $_SESSION['role'];?></span>
+                    <!-- <small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small> -->
+                    <!-- General tools such as edit or delete-->
+                    <div class="tools">
+                      <i class="fas fa-edit"></i>
+                      <i class="fas fa-trash-o"></i>
+                    </div>
+                  </li>
+
+                  <li>
+                    <!-- drag handle -->
+                    <span class="handle">
+                      <i class="fas fa-ellipsis-v"></i>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <!-- todo text -->
+                    <span class="text">Ruangan : </span>
+                    <!-- Emphasis label -->
+                    <span class="text"><?php echo $_SESSION['ruangan'];?></span>
+                    <!-- <small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small> -->
+                    <!-- General tools such as edit or delete-->
+                    <div class="tools">
+                      <i class="fas fa-edit"></i>
+                      <i class="fas fa-trash-o"></i>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.card-body-->
+              <div class="card-footer bg-transparent">
+                
+                <!-- /.row -->
+              </div>
+            </div>
+            <!-- /.card -->
+          </section>
+          <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+</div><!-- /.box-body -->
+</div><!-- /.box -->
+<!-- Modal Popup untuk delete--> 
+</div>
+</div>
+</section><!-- /.content -->
+</div>
                 <div class="modal fade" id="modal_delete">
                         <div class="modal-dialog">
                           <div class="modal-content" style="margin-top:100px;">
@@ -206,22 +377,24 @@ include "../include/session.php";
   </script>
 
 
+
 </div>
 <!-- ./wrapper -->
   <!-- JS -->
   <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script src="../assets/js/jquery.js"></script>
+<script src="./assets/js/jquery.js"></script>
+<script src="./assets/js/Chart.js"></script>
 <!-- Bootstrap -->
-<script src="../assets/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
 <!-- overlayScrollbars -->
 <!-- <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
 <!-- AdminLTE App -->
-<script src="../assets/js/adminlte.js"></script>
-<script src="../assets/js/custom.js"></script>
+<script src="./assets/js/adminlte.js"></script>
+<script src="./assets/js/custom.js"></script>
 
 <!-- OPTIONAL SCRIPTS -->
-<script src="../assets/js/demo.js"></script>
+<script src="./assets/js/demo.js"></script>
 
 
 </body>
