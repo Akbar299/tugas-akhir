@@ -116,9 +116,17 @@ include "../include/session.php";
                     <!-- small box -->
                     <div class="small-box bg-warning">
                       <div class="inner">
-                        <h3>44</h3>
+                      <?php
+                        $querysuratkeluar = mysqli_query($connect,"SELECT count(role) AS jumlah FROM tbl_user WHERE role = 'admin' ");
+                        $datasuratkeluar = mysqli_fetch_array($querysuratkeluar);
+                      ?>
+                      <?php
+                        $angka = $datasuratkeluar['jumlah'];
+                        echo "<h3>$angka</h3>";
+                      ?>
+                        
 
-                        <p>User Registrations</p>
+                        <p>Admin Registration</p>
                       </div>
                       <div class="icon">
                         <i class="ion ion-person-add"></i>
@@ -131,9 +139,17 @@ include "../include/session.php";
                     <!-- small box -->
                     <div class="small-box bg-danger">
                       <div class="inner">
-                        <h3>65</h3>
+                      <?php
+                        $querysuratkeluar = mysqli_query($connect,"SELECT count(role) AS jumlah FROM tbl_user WHERE role = 'pegawai' ");
+                        $datasuratkeluar = mysqli_fetch_array($querysuratkeluar);
+                      ?>
+                      <?php
+                        $angka = $datasuratkeluar['jumlah'];
+                        echo "<h3>$angka</h3>";
+                      ?>
+                        
 
-                        <p>Unique Visitors</p>
+                        <p>Pegawai Registration</p>
                       </div>
                       <div class="icon">
                         <i class="ion ion-pie-graph"></i>
